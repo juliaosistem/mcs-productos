@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 
-	<groupId>mcs-template</groupId>
-	<artifactId>mcs-template</artifactId>
+	<groupId>mcs-productos</groupId>
+	<artifactId>mcs-productos</artifactId>
 	<version>v1</version>
-	<name>mcs-template</name>
-	<description>Manejo  de Libros</description>
+	<name>mcs-productos</name>
+	<description>Manejo de productos</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -55,7 +55,29 @@
 			<version>3.3.0</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.10.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-test-autoconfigure</artifactId>
+			<version>3.3.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -127,7 +149,6 @@
 				<executions>
 					<execution>
 						<id>compile</id>
-						<phase>compile</phase>
 						<goals>
 							<goal>compile</goal>
 						</goals>
@@ -137,15 +158,39 @@
 					</execution>
 					<execution>
 						<id>test-compile</id>
-						<phase>test-compile</phase>
 						<goals>
 							<goal>test-compile</goal>
 						</goals>
+
 						<configuration>
 							<jvmTarget>${maven.compiler.target}</jvmTarget>
 						</configuration>
 					</execution>
 				</executions>
+
+				<configuration>
+
+					<compilerPlugins>
+						<plugin>lombok</plugin>
+					</compilerPlugins>
+
+					<sourceDirs>
+						<sourceDir>${project.basedir}/src/main/java</sourceDir>
+					</sourceDirs>
+
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-lombok</artifactId>
+						<version>${kotlin.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok</artifactId>
+						<version>${lombok.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

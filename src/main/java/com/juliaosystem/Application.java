@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.common.lib"})
-@EnableJpaRepositories(basePackages = {"com.common.lib.infraestructure.repository" ,"com.juliaosystem.infrastructure.repository"})
-@EntityScan(basePackages = {"com.common.lib.infraestructure.entitis" , "com.juliaosystem.infrastructure.entitis"})
+@EnableJpaRepositories(basePackages = {"com.common.lib.infraestructure.repository" ,"com.juliaosystem.infraestructure.repository"})
+@EntityScan(basePackages = {"com.common.lib.infraestructure.entitis" , "com.juliaosystem.infraestructure.entitis"})
 public class Application {
 
 	public static void main(String[] args) {
